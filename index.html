@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Union — Talabalar Ittifoqi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --paper: #F5F1E7;
+            --paper-2: #ECE5D3;
+            --ink: #1C1A16;
+            --ink-soft: #4A453C;
+            --navy: #152A44;
+            --navy-2: #0E1C30;
+            --gold: #E4A22F;
+            --gold-ink: #5B3E0D;
+            --line: rgba(28, 26, 22, 0.14);
+            --c-edu: #2F5D8A;
+            --c-eve: #B7345C;
+            --c-spo: #CC6A1B;
+            --c-med: #6B4A9A;
+            --c-eco: #3D8858;
+            --c-mp: #A6821F;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: 'Work Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        
+        a {
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            position: relative;
+        }
+        
+         ::selection {
+            background: var(--gold);
+            color: var(--navy-2);
+        }
+        /* focus visibility */
+        
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        /* ---------- NAV ---------- */
+        
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+        
+        .nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+        
+        .brand-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--paper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 900;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: color .15s, border-color .15s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--ink);
+            border-color: var(--gold);
+        }
+        
+        .nav-cta {
+            background: var(--navy);
+            color: var(--paper) !important;
+            padding: 10px 20px;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            border-bottom: none !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--navy-2) !important;
+        }
+        
+        .burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+        }
+        
+        .burger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--ink);
+            margin: 5px 0;
+        }
+        
+        @media (max-width:860px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--paper);
+                border-bottom: 1px solid var(--line);
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 24px 16px;
+                display: none;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--line);
+                width: 100%;
+            }
+            .nav-links .nav-cta {
+                margin-top: 8px;
+                text-align: center;
+                border-bottom: none !important;
+            }
+            .burger {
+                display: block;
+            }
+        }
+        /* ---------- HERO ---------- */
+        
+        .hero {
+            background: var(--navy);
+            color: var(--paper);
+            padding: 88px 0 0;
+            overflow: hidden;
+        }
+        
+        .hero-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 48px;
+            align-items: end;
+        }
+        
+        .eyebrow-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(228, 162, 47, 0.14);
+            color: var(--gold);
+            border: 1px solid rgba(228, 162, 47, 0.4);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 0.98;
+            color: var(--paper);
+        }
+        
+        .hero h1 em {
+            font-style: normal;
+            color: var(--gold);
+        }
+        
+        .hero-sub {
+            margin-top: 22px;
+            font-size: 18px;
+            max-width: 46ch;
+            color: #C9CFD9;
+        }
+        
+        .hero-actions {
+            margin-top: 34px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 26px;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform .15s, background .15s;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--gold-ink);
+        }
+        
+        .btn-gold:hover {
+            background: #F0B247;
+        }
+        
+        .btn-ghost {
+            border-color: rgba(245, 241, 231, 0.35);
+            color: var(--paper);
+        }
+        
+        .btn-ghost:hover {
+            border-color: var(--paper);
+        }
+        
+        .hero-card {
+            background: var(--paper);
+            color: var(--ink);
+            padding: 28px;
+            border-radius: 4px;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+        }
+        
+        .hero-card .num {
+            font-family: 'Archivo';
+            font-weight: 900;
+            font-size: 40px;
+            color: var(--navy);
+            line-height: 1;
+        }
+        
+        .hero-card .label {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 0;
+        }
+        
+        .hero-stats>div:nth-child(odd) {
+            border-right: 1px solid var(--line);
+            padding-right: 16px;
+        }
+        
+        .hero-stats>div {
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+        }
+        
+        .hero-stats>div:nth-child(-n+2) {
+            border-top: none;
+            padding-top: 0;
+        }
+        
+        @media (max-width:860px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+        /* torn edge divider */
+        
+        .tear {
+            height: 26px;
+            width: 100%;
+            background: var(--paper);
+            -webkit-mask: repeating-linear-gradient(115deg, #000 0 14px, transparent 14px 20px);
+            mask: repeating-linear-gradient(115deg, #000 0 14px, transparent 14px 20px);
+        }
+        /* ---------- ABOUT ---------- */
+        
+        .about {
+            padding: 80px 0 40px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 56px;
+            align-items: start;
+        }
+        
+        .kicker {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold-ink);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+        
+        .about h2 {
+            font-size: clamp(28px, 3.4vw, 40px);
+            margin-top: 10px;
+            line-height: 1.1;
+        }
+        
+        .about-text p {
+            color: var(--ink-soft);
+            font-size: 16.5px;
+            max-width: 52ch;
+        }
+        
+        @media (max-width:860px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* ---------- PILLARS (index / directory) ---------- */
+        
+        .pillars {
+            padding: 60px 0 90px;
+        }
+        
+        .pillars-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 24px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        
+        .pillars-head h2 {
+            font-size: clamp(26px, 3vw, 36px);
+        }
+        
+        .pillars-head p {
+            color: var(--ink-soft);
+            max-width: 40ch;
+            margin-top: 8px;
+        }
+        
+        .pillar-list {
+            border-top: 1px solid var(--line);
+        }
+        
+        .pillar {
+            display: grid;
+            grid-template-columns: 64px 1fr 1.3fr;
+            gap: 28px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+            align-items: start;
+        }
+        
+        .pillar-tab {
+            font-family: 'Archivo';
+            font-weight: 900;
+            font-size: 14px;
+            color: var(--paper);
+            background: var(--tab-color, var(--navy));
+            width: 44px;
+            height: 44px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pillar h3 {
+            font-size: 21px;
+        }
+        
+        .pillar .pillar-name-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .pillar .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--tab-color, var(--navy));
+        }
+        
+        .pillar p.desc {
+            color: var(--ink-soft);
+            margin: 0 0 10px;
+            font-size: 15px;
+            max-width: 50ch;
+        }
+        
+        .pillar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .pillar ul li {
+            font-size: 13px;
+            color: var(--ink);
+            background: var(--paper-2);
+            border: 1px solid var(--line);
+            padding: 5px 11px;
+            border-radius: 999px;
+        }
+        
+        @media (max-width:700px) {
+            .pillar {
+                grid-template-columns: 44px 1fr;
+                row-gap: 10px;
+            }
+            .pillar>div:nth-child(3) {
+                grid-column: 1 / -1;
+            }
+        }
+        /* ---------- JOIN / FORM ---------- */
+        
+        .join {
+            background: var(--navy-2);
+            color: var(--paper);
+            padding: 90px 0;
+        }
+        
+        .join-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 0;
+            align-items: stretch;
+        }
+        
+        .join-info {
+            padding-right: 56px;
+        }
+        
+        .join-info h2 {
+            font-size: clamp(28px, 3.6vw, 42px);
+            color: var(--paper);
+            line-height: 1.08;
+        }
+        
+        .join-info p {
+            color: #B9C0CB;
+            margin-top: 16px;
+            max-width: 42ch;
+        }
+        
+        .benefits {
+            list-style: none;
+            margin: 32px 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        
+        .benefits li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 15px;
+            color: #DCE1E8;
+        }
+        
+        .benefits li .check {
+            flex: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(228, 162, 47, 0.16);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+            margin-top: 2px;
+        }
+        
+        .ticket {
+            background: var(--paper);
+            color: var(--ink);
+            border-radius: 6px;
+            display: grid;
+            grid-template-columns: 1fr;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+        
+        .ticket-head {
+            padding: 26px 32px;
+            border-bottom: 2px dashed var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .ticket-head::before,
+        .ticket-head::after {
+            content: "";
+            position: absolute;
+            bottom: -11px;
+            width: 22px;
+            height: 22px;
+            background: var(--navy-2);
+            border-radius: 50%;
+        }
+        
+        .ticket-head::before {
+            left: -11px;
+        }
+        
+        .ticket-head::after {
+            right: -11px;
+        }
+        
+        .ticket-head h3 {
+            font-size: 20px;
+        }
+        
+        .ticket-head span {
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+        
+        form {
+            padding: 30px 32px 34px;
+            display: grid;
+            gap: 18px;
+        }
+        
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .field label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-soft);
+        }
+        
+        .field input,
+        .field select,
+        .field textarea {
+            border: 1px solid var(--line);
+            background: var(--paper-2);
+            border-radius: 3px;
+            padding: 12px 14px;
+            font-family: inherit;
+            font-size: 15px;
+            color: var(--ink);
+        }
+        
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            background: var(--paper);
+            border-color: var(--navy);
+        }
+        
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        
+        @media (max-width:520px) {
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .submit-btn {
+            background: var(--navy);
+            color: var(--paper);
+            border: none;
+            border-radius: 3px;
+            padding: 15px 20px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background .15s, transform .15s;
+        }
+        
+        .submit-btn:hover {
+            background: #1c3552;
+            transform: translateY(-1px);
+        }
+        
+        .submit-btn:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-status {
+            font-size: 14px;
+            padding: 12px 14px;
+            border-radius: 3px;
+            display: none;
+        }
+        
+        .form-status.show {
+            display: block;
+        }
+        
+        .form-status.ok {
+            background: rgba(61, 136, 88, 0.12);
+            color: #245C39;
+            border: 1px solid rgba(61, 136, 88, 0.35);
+        }
+        
+        .form-status.err {
+            background: rgba(183, 52, 92, 0.1);
+            color: #8A2745;
+            border: 1px solid rgba(183, 52, 92, 0.35);
+        }
+        
+        @media (max-width:860px) {
+            .join-grid {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+            .join-info {
+                padding-right: 0;
+            }
+        }
+        /* ---------- FOOTER ---------- */
+        
+        footer {
+            background: var(--paper);
+            padding: 56px 0 30px;
+            border-top: 1px solid var(--line);
+        }
+        
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+        
+        .foot-brand p {
+            color: var(--ink-soft);
+            font-size: 14px;
+            max-width: 32ch;
+            margin-top: 12px;
+        }
+        
+        .foot-col h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--ink-soft);
+            margin-bottom: 14px;
+        }
+        
+        .foot-col ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .foot-col a {
+            text-decoration: none;
+            font-size: 14.5px;
+            color: var(--ink);
+            border-bottom: 1px solid transparent;
+        }
+        
+        .foot-col a:hover {
+            border-color: var(--ink);
+        }
+        
+        .foot-bottom {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--ink-soft);
+        }
+        
+        @media (max-width:760px) {
+            .foot-grid {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 32px;
+            }
+        }
+        /* hero entrance */
+        
+        .hero h1,
+        .hero-sub,
+        .hero-actions,
+        .hero-card {
+            opacity: 0;
+            animation: riseIn .7s ease forwards;
+        }
+        
+        .hero h1 {
+            animation-delay: .05s;
+        }
+        
+        .hero-sub {
+            animation-delay: .18s;
+        }
+        
+        .hero-actions {
+            animation-delay: .3s;
+        }
+        
+        .hero-card {
+            animation-delay: .15s;
+        }
+        
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav-row">
+            <a href="#home" class="brand">
+                <span class="brand-mark">SU</span> Student Union
+            </a>
+            <button class="burger" id="burger" aria-label="Menyuni ochish" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Bosh sahifa</a></li>
+                <li><a href="#about">Biz haqimizda</a></li>
+                <li><a href="#pillars">Yo'nalishlar</a></li>
+                <li><a href="#join" class="nav-cta">Ariza qoldirish</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div>
+                <span class="eyebrow-tag">2025–2026 o'quv yili</span>
+                <h1>Talabalik davrini <em>bekorga</em> o'tkazma.</h1>
+                <p class="hero-sub">Student Union — talabalarni bilim, sport, ijod va ekologiya yo'nalishlarida birlashtiruvchi tashkilot. Sen ham o'z yo'nalishingni tanlab, jamoaga qo'shilishing mumkin.</p>
+                <div class="hero-actions">
+                    <a href="#join" class="btn btn-gold">Ariza qoldirish</a>
+                    <a href="#pillars" class="btn btn-ghost">Yo'nalishlarni ko'rish</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-stats">
+                    <div>
+                        <div class="num">100+</div>
+                        <div class="label">Faol a'zolar</div>
+                    </div>
+                    <div>
+                        <div class="num">20+</div>
+                        <div class="label">Yirik tadbirlar</div>
+                    </div>
+                    <div>
+                        <div class="num">6</div>
+                        <div class="label">Yo'nalish</div>
+                    </div>
+                    <div>
+                        <div class="num">2019</div>
+                        <div class="label">Tashkil topgan yil</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="tear"></div>
+
+    <section class="about" id="about">
+        <div class="wrap about-grid">
+            <div>
+                <span class="kicker">Biz haqimizda</span>
+                <h2>Talabalar uchun, talabalar tomonidan.</h2>
+            </div>
+            <div class="about-text">
+                <p>Student Union — o'quvchilar va talabalarni qo'llab-quvvatlaydigan, ularning bilim, ko'nikma va tajribasini oshirishga yordam beradigan tashkilot. Biz har bir a'zoning o'z qiziqishini topishi va rivojlantirishi uchun olti xil yo'nalishda
+                    faoliyat yuritamiz.</p>
+                <p>Kurslardan tortib sport musobaqalarigacha, ekologik loyihalardan media platformasigacha — har birimiz uchun mos joy bor. Rahbariyat bilan talabalar o'rtasidagi ko'prik bo'lish esa bizning eng muhim vazifamiz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars" id="pillars">
+        <div class="wrap">
+            <div class="pillars-head">
+                <div>
+                    <span class="kicker">Yo'nalishlar</span>
+                    <h2>Oltita yo'nalish, bitta jamoa.</h2>
+                </div>
+                <p>Har bir yo'nalish alohida qiziqish va ehtiyojga mo'ljallangan — o'zingga yaqinini tanla.</p>
+            </div>
+
+            <div class="pillar-list">
+                <div class="pillar">
+                    <div class="pillar-tab" style="--tab-color:var(--c-edu)">ED</div>
+                    <div>
+                        <div class="pillar-name-row"><span class="dot" style="--tab-color:var(--c-edu)"></span>
+                            <h3>Education</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="desc">O'quv kurslari, seminarlar va treninglar orqali bilim va ko'nikmalarni oshirish, professional rivojlanish imkoniyati.</p>
+                        <ul>
+                            <li>Bepul kurslar</li>
+                            <li>Professional treninglar</li>
+                            <li>Sertifikatlar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-tab" style="--tab-color:var(--c-eve)">EV</div>
+                    <div>
+                        <div class="pillar-name-row"><span class="dot" style="--tab-color:var(--c-eve)"></span>
+                            <h3>Events</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="desc">Madaniy tadbirlar, uchrashuvlar va festivallar orqali talabalarni birlashtirish, yangi tanishuvlar va tajriba almashish.</p>
+                        <ul>
+                            <li>Madaniy festivallar</li>
+                            <li>Networking uchrashuvlar</li>
+                            <li>Konsert va ko'rgazmalar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-tab" style="--tab-color:var(--c-spo)">SP</div>
+                    <div>
+                        <div class="pillar-name-row"><span class="dot" style="--tab-color:var(--c-spo)"></span>
+                            <h3>Sport</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="desc">Sport musobaqalari va sog'lom turmush tarzini targ'ib etish, jismoniy va ruhiy salomatlikni mustahkamlash.</p>
+                        <ul>
+                            <li>Sport musobaqalari</li>
+                            <li>Fitnes dasturlari</li>
+                            <li>Jamoaviy o'yinlar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-tab" style="--tab-color:var(--c-med)">ME</div>
+                    <div>
+                        <div class="pillar-name-row"><span class="dot" style="--tab-color:var(--c-med)"></span>
+                            <h3>Media</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="desc">Talabalar gazetasi, blog va ijtimoiy tarmoqlar orqali fikr bildirish, kreativ g'oyalarni hayotga tatbiq etish.</p>
+                        <ul>
+                            <li>Talabalar gazetasi</li>
+                            <li>Blog platformasi</li>
+                            <li>SMM va dizayn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-tab" style="--tab-color:var(--c-eco)">EC</div>
+                    <div>
+                        <div class="pillar-name-row"><span class="dot" style="--tab-color:var(--c-eco)"></span>
+                            <h3>Ecology</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="desc">Atrof-muhitni asrash, daraxt ekish va ekologik loyihalarni amalga oshirish — yashil kelajak uchun hozirdan harakat.</p>
+                        <ul>
+                            <li>Daraxt ekish</li>
+                            <li>Hududni tozalash</li>
+                            <li>Qayta ishlash loyihalari</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-tab" style="--tab-color:var(--c-mp)">MP</div>
+                    <div>
+                        <div class="pillar-name-row"><span class="dot" style="--tab-color:var(--c-mp)"></span>
+                            <h3>Meta Prezident</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="desc">Talabalar fikrini tinglash va rahbariyatga yetkazish, tashkiliy jarayonlarda faol ishtirok etish — talabalar va rahbariyat o'rtasidagi ko'prik.</p>
+                        <ul>
+                            <li>Fikrlarni yig'ish</li>
+                            <li>Takliflarni yetkazish</li>
+                            <li>Muammolarni hal qilish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join" id="join">
+        <div class="wrap join-grid">
+            <div class="join-info">
+                <span class="kicker" style="color:var(--gold)">A'zo bo'lish</span>
+                <h2>Student Union safiga qo'shil.</h2>
+                <p>Formani to'ldir — jamoamiz siz bilan tez orada bog'lanadi va qaysi yo'nalishda ishtirok etishingiz haqida gaplashamiz.</p>
+                <ul class="benefits">
+                    <li><span class="check">✓</span> Bepul ta'lim va treninglar</li>
+                    <li><span class="check">✓</span> Qiziqarli tadbirlar va uchrashuvlar</li>
+                    <li><span class="check">✓</span> Yangi do'stlar va networking</li>
+                    <li><span class="check">✓</span> Shaxsiy va professional rivojlanish</li>
+                </ul>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket-head">
+                    <h3>Ariza qoldiring</h3>
+                    <span>№ SU-2026</span>
+                </div>
+                <form id="applyForm">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="fullname">Ism va familiya</label>
+                            <input type="text" id="fullname" name="fullname" required placeholder="Masalan: Aziza Karimova">
+                        </div>
+                        <div class="field">
+                            <label for="phone">Telefon raqam</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+998 90 123 45 67">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email (ixtiyoriy)</label>
+                        <input type="email" id="email" name="email" placeholder="email@example.com">
+                    </div>
+                    <div class="field">
+                        <label for="pillar">Qaysi yo'nalish qiziqtiradi?</label>
+                        <select id="pillar" name="pillar" required>
+            <option value="" disabled selected>Tanlang</option>
+            <option value="Education">Education</option>
+            <option value="Events">Events</option>
+            <option value="Sport">Sport</option>
+            <option value="Media">Media</option>
+            <option value="Ecology">Ecology</option>
+            <option value="Meta Prezident">Meta Prezident</option>
+          </select>
+                    </div>
+                    <div class="field">
+                        <label for="message">Qo'shimcha izoh (ixtiyoriy)</label>
+                        <textarea id="message" name="message" rows="3" placeholder="O'zingiz haqingizda qisqacha..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Ariza yuborish</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap foot-grid">
+            <div class="foot-brand">
+                <a href="#home" class="brand"><span class="brand-mark">SU</span>Student Union</a>
+                <p>Talabalarni qo'llab-quvvatlaydigan va rivojlantiradigan tashkilot.</p>
+            </div>
+            <div class="foot-col">
+                <h4>Yo'nalishlar</h4>
+                <ul>
+                    <li><a href="#pillars">Education</a></li>
+                    <li><a href="#pillars">Events</a></li>
+                    <li><a href="#pillars">Sport</a></li>
+                    <li><a href="#pillars">Media</a></li>
+                    <li><a href="#pillars">Ecology</a></li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h4>Havolalar</h4>
+                <ul>
+                    <li><a href="#about">Biz haqimizda</a></li>
+                    <li><a href="#join">A'zo bo'lish</a></li>
+                    <li><a href="#pillars">Yo'nalishlar</a></li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h4>Ijtimoiy tarmoqlar</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/union_school_uz/" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap foot-bottom">
+            <span>© 2026 Student Union. Barcha huquqlar himoyalangan.</span>
+        </div>
+    </footer>
+
+    <script>
+        // mobile nav toggle
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+        }));
+
+        // ---- Telegram bot orqali ariza yuborish ----
+        // DIQQAT: bu token brauzerda ochiq ko'rinadi (sahifa manbasida).
+        // Faqat shaxsiy/ishonchli joyda joylashtiring, umumga ochiq repo yoki ommaviy saytda emas.
+        const BOT_TOKEN = "8601151770:AAFJKFEwDxwWnIphaU2831F82j9noLUVRBI";
+        const CHAT_ID = "7714558401";
+
+        const form = document.getElementById('applyForm');
+        const statusBox = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async(e) => {
+            e.preventDefault();
+
+            const fullname = document.getElementById('fullname').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const pillar = document.getElementById('pillar').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!fullname || !phone || !pillar) {
+                showStatus('Iltimos, majburiy maydonlarni to\'ldiring.', 'err');
+                return;
+            }
+
+            const text =
+                `🎓 Yangi ariza — Student Union
+
+👤 Ism va familiya: ${fullname}
+📞 Telefon: ${phone}
+✉️ Email: ${email || '—'}
+🧭 Yo'nalish: ${pillar}
+💬 Izoh: ${message || '—'}`;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Yuborilmoqda...';
+            statusBox.classList.remove('show', 'ok', 'err');
+
+            try {
+                const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text
+                    })
+                });
+                const data = await res.json();
+
+                if (data.ok) {
+                    showStatus('Rahmat! Arizangiz muvaffaqiyatli yuborildi.', 'ok');
+                    form.reset();
+                } else {
+                    showStatus('Xatolik yuz berdi. Birozdan so\'ng qayta urinib ko\'ring.', 'err');
+                }
+            } catch (err) {
+                showStatus('Internetga ulanishda xatolik. Qayta urinib ko\'ring.', 'err');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Ariza yuborish';
+            }
+        });
+
+        function showStatus(msg, type) {
+            statusBox.textContent = msg;
+            statusBox.classList.add('show', type);
+        }
+    </script>
+
+</body>
+
+</html>
